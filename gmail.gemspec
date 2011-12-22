@@ -1,18 +1,17 @@
-# -*- ruby -*-
+# -*- encoding: utf-8 -*-
+require 'lib/gmail/version'
 
-$:.unshift(File.expand_path('../lib', __FILE__))
-require 'gmail/version'
+Gem::Specification.new do |s|
+  s.name = %q{gmail}
+  s.version = Gmail.version
 
-begin
-  Ore::Specification.new do |gemspec|
-    gemspec.version = Gmail.version
-  end
-rescue NameError
-  begin
-    require 'ore/specification'
-    retry
-  rescue LoadError
-    STDERR.puts "The '#{__FILE__}' file requires Ore."
-    STDERR.puts "Run `gem install ore-core` to install Ore."
-  end
+  s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
+  s.authors = ["Kriss Kowalik", "Daniel Parker"]
+  s.date = %q{2011-12-22}
+  s.description = %q{A Ruby interface to Google's Gmail.}
+  s.email = %q{info@engineyard.com}
+  s.homepage = %q{http://github.com/engineyard/gmail}
+  s.require_paths = ["lib"]
+  s.rubygems_version = %q{1.5.2}
+  s.summary = %q{A Ruby interface to Google's Gmail.}
 end
