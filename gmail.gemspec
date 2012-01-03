@@ -14,4 +14,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.5.2}
   s.summary = %q{A Ruby interface to Google's Gmail.}
+  
+  s.add_dependency(%q<mime>, [">= 0.1"])
+  s.add_dependency(%q<gmail_xoauth>, [">= 0.3.0"])
 end
